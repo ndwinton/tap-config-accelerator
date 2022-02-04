@@ -54,12 +54,11 @@ accelerator:
     inputType: text
     defaultValue: '<Registry Password>'
 
-  # - name: tbsAdvanced
-  #   label: Show advanced Build Service configuration options
-  #   inputType: checkbox
-  #   display: true
-  #   dataType: boolean
-  #   defaultValue: false
+  - name: tbsAdvanced
+    inputType: checkbox
+    display: true
+    dataType: boolean
+    defaultValue: false
 
   # - name: tbsCaCert
   #   inputType: textarea
