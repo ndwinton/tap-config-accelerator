@@ -63,16 +63,29 @@ accelerator:
   - name: registryGcrKey
     label: GCR Service Account Key JSON
     description: |
-      Paste the contents of a suitably authorised service account
-      key file, in JSON format.
+      Enter the contents of a suitably authorised service account
+      key file (JSON format).
     inputType: textarea
     dependsOn:
       name: registryType
       value: gcr
 
+  - name: registryServer
+    description: |
+      The registry server host.
+      For a private registry 'myrepo.com/project/sub-project' this
+      would be 'myrepo.com'.
+    inputType: text
+    dependsOn:
+      name: registryType
+      value: private
+
   - name: registryProject
     label: Registry Project
-    description: 
+    description: |
+      The registry 'project' component. For DockerHub this will
+      probably be your username.
+      For other registries it might be a sub-path within the registry.
 
   - name: tbsAdvanced
     label: Configure advanced TBS settings
@@ -84,10 +97,36 @@ accelerator:
 
   - name: tbsCaCert
     label: TBS CA Certificate
+    description: 
     inputType: textarea
     dependsOn:
       name: tbsAdvanced
 
+  - name: tbsEnableUpdates
+    label: Enable Dependency Ppdates
+    description: Allow automatic import of new dependency updates from Tanzunet
+    dependsOn:
+      name: tbsAdvanced
+    inputType: checkbox
+    dataType: boolean
+    defaultValue: false
+
+  - name: tbsDescriptorName
+    label: Descriptor Name
+    description: |
+      Name of descriptor to import, e.g. tap-1.0.0-full or tap-1.0.0-lite
+    inputType: text
+    dependsOn:
+      name: tbsEnableUpdates
+
+  - name: tbsDescriptorVersion
+    label: Descriptor Version
+    description: |
+      Version of descriptor to use during install. This
+      will override the version installed by default.
+    inputType: text
+    dependsOn:
+      name: tbsEnableUpdates
 
 engine:
   include:
