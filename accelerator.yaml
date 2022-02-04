@@ -62,11 +62,10 @@ accelerator:
     dataType: boolean
     defaultValue: false
 
-  # - name: tbsCaCert
-  #   inputType: textarea
-  #   label: TBS CA Certificate
-  #   defaultValue: ''
-  #   dependsOn: tbsAdvanced
+  - name: tbsCaCert
+    inputType: textarea
+    label: TBS CA Certificate
+    dependsOn: tbsAdvanced
 
 
 
