@@ -85,7 +85,8 @@ accelerator:
   - name: tbsCaCert
     label: TBS CA Certificate
     inputType: textarea
-    dependsOn: tbsAdvanced
+    dependsOn:
+      name: tbsAdvanced
 
 
 engine:
