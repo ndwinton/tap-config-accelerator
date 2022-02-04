@@ -55,8 +55,10 @@ accelerator:
     defaultValue: '<Registry Password>'
 
   - name: tbsAdvanced
-    inputType: checkbox
+    label: Configure advanced TBS settings
+    description: Show options to configure less frequently-used settings
     display: true
+    inputType: checkbox
     dataType: boolean
     defaultValue: false
 
