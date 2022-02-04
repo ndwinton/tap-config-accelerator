@@ -1,7 +1,7 @@
-# New Accelerator
+# Tanzu Application Platform installation configuration
 
-- [new-accelerator.yaml](new-accelerator.yaml)  
-  Rename this file to `accelerator.yaml` and include it inside your new accelerator repo.
-
-- [k8s-resource.yaml](k8s-resource.yaml)  
-  Apply this to the Kubernetes cluster where your instance of Accelerator was deployed.
+- [tap-values.yaml](tap-values.yaml)  
+  This is the file that you will need to supply when running
+  ```bash
+  tanzu package available install ... -f tap-values.yaml
+  ```

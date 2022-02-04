@@ -1,5 +1,5 @@
 accelerator:
-  displayName: tap-config-accelerator
+  displayName: TAP Configuration
   description: Generates a TAP installation configuration file
   iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-tanzu-light.png
   tags: []
@@ -58,7 +58,18 @@ accelerator:
     label: Registry Password
     inputType: text
     defaultValue: '<Registry Password>'
-    
+
+  - name: tbsAdvanced
+    label: Show advanced Build Service configuration options
+    display: true
+    defaultValue: false
+
+  - name: tbsCaCert
+    inputType: textarea
+    label: TBS CA Certificate
+    dependsOn: tbsAdvanced
+
+
 
 engine:
   include:
