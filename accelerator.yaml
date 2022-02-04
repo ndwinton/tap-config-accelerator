@@ -61,12 +61,10 @@ accelerator:
     inputType: checkbox
     dataType: boolean
     defaultValue: false
-
   - name: tbsCaCert
     inputType: textarea
     label: TBS CA Certificate
     dependsOn: tbsAdvanced
-
 
 
 engine:
