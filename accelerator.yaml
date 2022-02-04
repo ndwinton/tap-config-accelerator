@@ -97,13 +97,15 @@ accelerator:
 
   - name: tbsCaCert
     label: TBS CA Certificate
-    description: 
+    description: |
+      If the registry being used does not have a certificate signed
+      by a well-known CA, supply the CA certificate here.
     inputType: textarea
     dependsOn:
       name: tbsAdvanced
 
   - name: tbsEnableUpdates
-    label: Enable Dependency Ppdates
+    label: Enable Automatic Dependency Updates
     description: Allow automatic import of new dependency updates from Tanzunet
     dependsOn:
       name: tbsAdvanced
@@ -127,6 +129,29 @@ accelerator:
     inputType: text
     dependsOn:
       name: tbsEnableUpdates
+  
+  - name: tbsHttpProxy
+    label: HTTP Proxy
+    description: The HTTP proxy to use for network traffic
+    inputType: text
+    dependsOn:
+      name: tbsAdvanced
+
+  - name: tbsHttpsProxy
+    label: HTTPS Proxy
+    description: The HTTPS proxy to use for network traffic
+    inputType: text
+    dependsOn:
+      name: tbsAdvanced
+
+  - name: tbsNoProxy
+    label: No Proxy Addresses
+    description: |
+      A comma-separated list of hostnames, IP addresses,
+      or IP ranges in CIDR format that should not use a proxy
+    inputType: text
+    dependsOn:
+      name: tbsAdvanced
 
 engine:
   include:
