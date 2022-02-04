@@ -61,6 +61,7 @@ accelerator:
 
   - name: tbsAdvanced
     label: Show advanced Build Service configuration options
+    inputType: toggle
     display: true
     defaultValue: false
 
