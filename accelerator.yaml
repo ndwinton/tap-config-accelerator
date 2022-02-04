@@ -1,5 +1,5 @@
 accelerator:
-  displayName: TAP Configuration
+  displayName: TAP Installation Configuration
   description: Generates a TAP installation configuration file
   iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-tanzu-light.png
   tags: []
@@ -46,13 +46,33 @@ accelerator:
     
   - name: registryUsername
     label: Registry Username
+    description: |
+      The user account for the registry.
+      For GCR this value will be ignored.
     inputType: text
     defaultValue: '<Registry Username>'
   
   - name: registryPassword
     label: Registry Password
+    description: |
+      The password for the registry.
+      For GCR this value will be ignored.
     inputType: text
     defaultValue: '<Registry Password>'
+
+  - name: registryGcrKey
+    label: GCR Service Account Key JSON
+    description: |
+      Paste the contents of a suitably authorised service account
+      key file, in JSON format.
+    inputType: textarea
+    dependsOn:
+      name: registryType
+      value: gcr
+
+  - name: registryProject
+    label: Registry Project
+    description: 
 
   - name: tbsAdvanced
     label: Configure advanced TBS settings
@@ -61,9 +81,10 @@ accelerator:
     inputType: checkbox
     dataType: boolean
     defaultValue: false
+
   - name: tbsCaCert
-    inputType: textarea
     label: TBS CA Certificate
+    inputType: textarea
     dependsOn: tbsAdvanced
 
 
